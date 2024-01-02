@@ -25,4 +25,10 @@ public class Position {
 
     @Column(name = "salary_range")
     private Double salaryRange;
+
+    @Column(name = "minimum_salary")
+    private Double minimumSalary;
+
+    @Column(name = "highest_salary")
+    private Double highestSalary;
 }
