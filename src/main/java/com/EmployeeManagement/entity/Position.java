@@ -5,12 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "emp_ms_position")
+@Table(name = "position")
 public class Position {
     @Id
     @Column(name = "position_id")
@@ -31,4 +32,8 @@ public class Position {
 
     @Column(name = "highest_salary")
     private Double highestSalary;
+
+    //updated
+    @OneToMany
+    private List<Department> departmentId;
 }

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="emp_ms_employee")
+@Table(name="employees")
 public class Employee {
     @Id
     @Column(name = "employee_id")
@@ -42,8 +42,9 @@ public class Employee {
     @Column(name = "joining_date")
     private LocalDate joiningDate;
 
-    @Column(name = "department_id")
-    private Integer departmentId;
+//    @Column(name = "department_id")
+    @ManyToOne
+    private Department departmentId;
 
     @Column(name = "position_id")
     private Integer positionId;

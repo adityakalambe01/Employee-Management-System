@@ -16,5 +16,4 @@ public interface DepartmentRepository extends JpaRepository<Department, Integer>
     @Query("select d from Department d order by d.departmentName desc ")
     List<Department> findOrderByDepartmentNameDesc();
 
-
 }

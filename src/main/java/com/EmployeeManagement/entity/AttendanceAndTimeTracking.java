@@ -7,18 +7,22 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "emp_ms_attendance_and_time_tracking")
+@Table(name = "attendance_and_time_tracking")
 public class AttendanceAndTimeTracking {
     @Id
     @Column(name = "attendance_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer attendanceId;
 
+
+//    @OneToMany
+//    private List<Employee> employeeId;
     @Column(name = "employee_id")
     private Integer employeeId;
 

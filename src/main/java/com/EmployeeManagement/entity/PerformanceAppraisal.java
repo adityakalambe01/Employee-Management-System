@@ -6,20 +6,22 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "emp_ms_performance_appraisal")
+@Table(name = "performance_appraisal")
 public class PerformanceAppraisal {
     @Id
     @Column(name = "appraisal_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer appraisalID;
 
-    @Column(name = "employee_id")
-    private Integer employeeId;
+//    @Column(name = "employee_id")
+    @OneToMany
+    private List<Employee> employeeId;
 
     @Column(name = "appraisal_date")
     private LocalDate appraisalDate;

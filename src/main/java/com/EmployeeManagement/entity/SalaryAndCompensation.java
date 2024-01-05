@@ -10,15 +10,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "emp_ms_salary_and_compensation")
+@Table(name = "salary_and_compensation")
 public class SalaryAndCompensation {
     @Id
     @Column(name = "salary_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer salaryId;
 
-    @Column(name = "employee_id")
-    private Integer employeeId;
+//    @Column(name = "employee_id")
+//    private Integer employeeId;
+    @OneToOne
+    private Employee employeeId;
 
     @Column(name = "base_salary")
     private Double baseSalary;

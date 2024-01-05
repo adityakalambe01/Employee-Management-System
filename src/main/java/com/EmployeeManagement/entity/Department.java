@@ -1,7 +1,6 @@
 package com.EmployeeManagement.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "emp_ms_department")
+@Table(name = "departments")
 public class Department {
     @Id
     @Column(name = "department_id")
