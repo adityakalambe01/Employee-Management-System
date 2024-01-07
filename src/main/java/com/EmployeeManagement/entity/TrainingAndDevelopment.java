@@ -19,9 +19,10 @@ public class TrainingAndDevelopment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer trainingId;
 
-//    @Column(name = "employee_id")
-    @OneToMany
-    private List<Employee> employeeId;
+    @Column(name = "employee_id")
+    private Integer employeeId;
+//    @OneToMany
+//    private List<Employee> employeeId;
 
     @Column(name = "training_name")
     private String trainingName;

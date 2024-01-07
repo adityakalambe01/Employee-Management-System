@@ -34,11 +34,21 @@ public class LeaveManagementService {
     public Boolean updateLeaveRecord(Integer leaveId, LeaveManagement leaveManagement){
         try {
             LeaveManagement dbLeaveManagement = leaveManagementRepository.findById(leaveId).get();
-            dbLeaveManagement.setEmployeeId(leaveManagement.getEmployeeId());
-            dbLeaveManagement.setLeaveType(leaveManagement.getLeaveType());
-            dbLeaveManagement.setLeaveStatus(leaveManagement.getLeaveStatus());
-            dbLeaveManagement.setLeaveStartDate(leaveManagement.getLeaveStartDate());
-            dbLeaveManagement.setLeaveEndDate(leaveManagement.getLeaveEndDate());
+            dbLeaveManagement.setEmployeeId(
+                    leaveManagement.getEmployeeId()
+            );
+            dbLeaveManagement.setLeaveType(
+                    leaveManagement.getLeaveType()
+            );
+            dbLeaveManagement.setLeaveStatus(
+                    leaveManagement.getLeaveStatus()
+            );
+            dbLeaveManagement.setLeaveStartDate(
+                    leaveManagement.getLeaveStartDate()
+            );
+            dbLeaveManagement.setLeaveEndDate(
+                    leaveManagement.getLeaveEndDate()
+            );
 
             leaveManagementRepository.save(dbLeaveManagement);
 
@@ -90,6 +100,13 @@ public class LeaveManagementService {
     public List<LeaveManagement> getCurrentDateLeave(){
         return leaveManagementRepository.findByLeaveStartDate(LocalDate.now());
     }
+
+//    public Integer leaveBalance(Integer employeeId){
+//        LocalDate today = LocalDate.now();
+//        LocalDate firstDayOfMonth = today.with(TemporalAdjusters.firstDayOfMonth());
+//        LocalDate lastDayOfMonth = today.with(TemporalAdjusters.lastDayOfMonth());
+//        return leaveManagementRepository.findLeaveBalance(employeeId, firstDayOfMonth, lastDayOfMonth);
+//    }
 
 
 

@@ -1,7 +1,6 @@
 package com.EmployeeManagement.service;
 
 import com.EmployeeManagement.entity.AttendanceAndTimeTracking;
-import com.EmployeeManagement.entity.Employee;
 import com.EmployeeManagement.repository.AttendanceAndTimeTrackingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

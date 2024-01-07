@@ -19,9 +19,9 @@ public class PerformanceAppraisal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer appraisalID;
 
-//    @Column(name = "employee_id")
-    @OneToMany
-    private List<Employee> employeeId;
+    @Column(name = "employee_id")
+//    @OneToMany
+    private Integer employeeId;
 
     @Column(name = "appraisal_date")
     private LocalDate appraisalDate;

@@ -96,7 +96,7 @@ public class SalaryAndCompensationService {
         for(Integer employeeId : employeeList){
             for (SalaryAndCompensation employee : lst){
                 if(
-                        employeeId.equals(employee.getEmployeeId())
+                        Objects.equals(employeeId, employee.getEmployeeId())
                 ){
                     employee.setBaseSalary(employee.getBaseSalary()+amount);
                     salaryAndCompensationRepository.save(employee);

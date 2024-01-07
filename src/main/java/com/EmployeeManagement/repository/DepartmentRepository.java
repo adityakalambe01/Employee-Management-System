@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
-    public List<Department> findByDepartmentNameLike(String departmentName);
+    List<Department> findByDepartmentNameLike(String departmentName);
 
     @Query("select d from Department d order by d.departmentName")
     List<Department> findOrderByDepartmentNameAsc();

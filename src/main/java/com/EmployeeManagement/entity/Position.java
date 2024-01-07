@@ -34,6 +34,7 @@ public class Position {
     private Double highestSalary;
 
     //updated
-    @OneToMany
-    private List<Department> departmentId;
+//    @OneToMany
+    @Column(name = "department_id")
+    private Integer departmentId;
 }

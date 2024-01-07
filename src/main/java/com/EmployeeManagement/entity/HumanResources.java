@@ -18,9 +18,9 @@ public class HumanResources {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer hrId;
 
-//    @Column(name = "employee_id", unique = true)
-    @ManyToOne
-    private Employee employeeId;
+    @Column(name = "employee_id", unique = true)
+//    @ManyToOne
+    private Integer employeeId;
 
     @Column(name = "hr_title")
     private String hrTitle;

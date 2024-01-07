@@ -17,10 +17,10 @@ public class SalaryAndCompensation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer salaryId;
 
-//    @Column(name = "employee_id")
-//    private Integer employeeId;
-    @OneToOne
-    private Employee employeeId;
+    @Column(name = "employee_id")
+    private Integer employeeId;
+//    @OneToOne
+//    private Employee employeeId;
 
     @Column(name = "base_salary")
     private Double baseSalary;

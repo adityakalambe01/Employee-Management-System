@@ -56,17 +56,39 @@ public class EmployeeService {
     public boolean updateEmployee(Integer employeeId, Employee updatedEmployee){
         try{
             Employee dbEmployee = employeeRepository.findById(employeeId).get();
-            dbEmployee.setFirstName(updatedEmployee.getFirstName());
-            dbEmployee.setLastName(updatedEmployee.getLastName());
-            dbEmployee.setDateOfBirth(updatedEmployee.getDateOfBirth());
-            dbEmployee.setGender(updatedEmployee.getGender());
-            dbEmployee.setMobileNumber(updatedEmployee.getMobileNumber());
-            dbEmployee.setEmailId(updatedEmployee.getEmailId());
-            dbEmployee.setAddress(updatedEmployee.getAddress());
-            dbEmployee.setJoiningDate(updatedEmployee.getJoiningDate());
-            dbEmployee.setDepartmentId(updatedEmployee.getDepartmentId());
-            dbEmployee.setPositionId(updatedEmployee.getPositionId());
-            dbEmployee.setSalary(updatedEmployee.getSalary());
+            dbEmployee.setFirstName(
+                    updatedEmployee.getFirstName()
+            );
+            dbEmployee.setLastName(
+                    updatedEmployee.getLastName()
+            );
+            dbEmployee.setDateOfBirth(
+                    updatedEmployee.getDateOfBirth()
+            );
+            dbEmployee.setGender(
+                    updatedEmployee.getGender()
+            );
+            dbEmployee.setMobileNumber(
+                    updatedEmployee.getMobileNumber()
+            );
+            dbEmployee.setEmailId(
+                    updatedEmployee.getEmailId()
+            );
+            dbEmployee.setAddress(
+                    updatedEmployee.getAddress()
+            );
+            dbEmployee.setJoiningDate(
+                    updatedEmployee.getJoiningDate()
+            );
+            dbEmployee.setDepartmentId(
+                    updatedEmployee.getDepartmentId()
+            );
+            dbEmployee.setPositionId(
+                    updatedEmployee.getPositionId()
+            );
+            dbEmployee.setSalary(
+                    updatedEmployee.getSalary()
+            );
 
             employeeRepository.save(dbEmployee);
         }catch (Exception e){

@@ -25,4 +25,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     @Query("select e from Employee e order by e.salary desc")
     List<Employee> findByOrderSalaryDesc();
+
+
 }

@@ -21,4 +21,7 @@ public interface LeaveManagementRepository extends JpaRepository<LeaveManagement
 
 
     List<LeaveManagement> findByLeaveStartDate(LocalDate now);
+
+//    @Query("select count(l) from LeaveManagement l where l.employeeId = ?1 and l.")
+//    Integer findLeaveBalance(Integer employeeId, LocalDate firstDayOfMonth, LocalDate lastDayOfMonth);
 }

@@ -19,9 +19,9 @@ public class LeaveManagement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer leaveId;
 
-//    @Column(name = "employee_id")
-    @OneToMany
-    private List<Employee> employeeId;
+    @Column(name = "employee_id")
+//    @OneToMany
+    private Integer employeeId;
 
 
     @Column(name = "leave_type")

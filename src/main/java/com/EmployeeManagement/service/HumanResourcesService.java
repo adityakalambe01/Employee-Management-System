@@ -33,7 +33,7 @@ public class HumanResourcesService {
     public Boolean deleteHrFromDb(Integer hrId){
         try {
             HumanResources dbHumanResource = humanResourcesRepository.findById(hrId).get();
-            humanResourcesRepository.deleteById(hrId);
+            humanResourcesRepository.delete(dbHumanResource);
         }catch (Exception e){
             return false;
         }

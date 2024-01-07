@@ -47,6 +47,10 @@ public class DepartmentService {
         return departmentRepository.findOrderByDepartmentNameAsc();
     }
 
+    public List<Department> findOrderByDepartmentNameDesc(){
+        return departmentRepository.findOrderByDepartmentNameDesc();
+    }
+
     public Department viewDepartmentById(Integer departmentId){
         try{
             return  departmentRepository.findById(departmentId).get();

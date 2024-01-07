@@ -42,9 +42,9 @@ public class Employee {
     @Column(name = "joining_date")
     private LocalDate joiningDate;
 
-//    @Column(name = "department_id")
-    @ManyToOne
-    private Department departmentId;
+    @Column(name = "department_id")
+//    @ManyToOne
+    private Integer departmentId;
 
     @Column(name = "position_id")
     private Integer positionId;

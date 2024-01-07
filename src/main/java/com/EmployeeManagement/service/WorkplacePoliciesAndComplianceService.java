@@ -18,9 +18,15 @@ public class WorkplacePoliciesAndComplianceService {
     public Boolean updatePolicyFromDb(Integer policyId, WorkplacePoliciesAndCompliance updatedWorkplacePoliciesAndCompliance){
         try {
             WorkplacePoliciesAndCompliance dbPolicy = workplacePoliciesAndComplianceRepository.findById(policyId).get();
-            dbPolicy.setPolicyName(updatedWorkplacePoliciesAndCompliance.getPolicyName());
-            dbPolicy.setPolicyDescription(updatedWorkplacePoliciesAndCompliance.getPolicyDescription());
-            dbPolicy.setComplianceStatus(updatedWorkplacePoliciesAndCompliance.getComplianceStatus());
+            dbPolicy.setPolicyName(
+                                    updatedWorkplacePoliciesAndCompliance.getPolicyName()
+            );
+            dbPolicy.setPolicyDescription(
+                                    updatedWorkplacePoliciesAndCompliance.getPolicyDescription()
+            );
+            dbPolicy.setComplianceStatus(
+                                    updatedWorkplacePoliciesAndCompliance.getComplianceStatus()
+            );
             workplacePoliciesAndComplianceRepository.save(dbPolicy);
         }catch (Exception e){
             return false;
