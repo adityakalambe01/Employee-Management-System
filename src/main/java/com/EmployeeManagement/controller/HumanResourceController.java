@@ -38,5 +38,20 @@ public class HumanResourceController {
         return "Invalid HR Id "+hrId;
     }
 
+    @GetMapping("getTitle")
+    public String getHrTitle(Integer hrId){
+        String title = humanResourcesService.getHrTitle(hrId);
+        if (title==null)
+            return "The title is not fount for id "+hrId;
+        return title;
+    }
 
+    @GetMapping("getId")
+    public String getHrId(Integer employeeId){
+        Integer hrId = humanResourcesService.getHrId(employeeId);
+        if (hrId==null){
+            return "The HR id from employee id "+employeeId+" is not found";
+        }
+        return "The HR id of employee id is "+hrId;
+    }
 }

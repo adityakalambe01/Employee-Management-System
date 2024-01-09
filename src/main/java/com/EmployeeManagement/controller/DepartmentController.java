@@ -38,7 +38,7 @@ public class DepartmentController {
         return departmentService.getDepartmentByAscOrder();
     }
 
-    @GetMapping("getDepartmentByAscOrder")
+    @GetMapping("getDepartmentByDescOrder")
     public List<Department> findOrderByDepartmentNameDesc(){
         return departmentService.findOrderByDepartmentNameDesc();
     }
