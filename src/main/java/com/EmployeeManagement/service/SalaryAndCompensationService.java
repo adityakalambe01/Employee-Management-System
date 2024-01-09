@@ -31,14 +31,14 @@ public class SalaryAndCompensationService {
     public List<SalaryAndCompensation> getAllSalaryAndCompensation(){
         return salaryAndCompensationRepository.findAll();
     }
-    public SalaryAndCompensation getSalaryByEmployeeId(Integer employeeId){
+    public Double getSalaryByEmployeeId(Integer employeeId){
         SalaryAndCompensation s1;
         try{
             s1 = salaryAndCompensationRepository.findByEmployeeId(employeeId);
         }catch (Exception e){
             return null;
         }
-        return s1;
+        return s1.getBaseSalary();
     }
 
     public Double getBaseSalaryOfEmployee(Integer employeeId){
@@ -70,7 +70,7 @@ public class SalaryAndCompensationService {
         try{
             return avarage/lst.size();
         }catch (Exception e){
-            return 0.0;
+            return (double)0;
         }
     }
 

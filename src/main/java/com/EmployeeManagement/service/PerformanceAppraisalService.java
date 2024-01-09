@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
@@ -52,8 +54,15 @@ public class PerformanceAppraisalService {
         return true;
     }
 
-    public List getRatingsBetweenRange(Double initialRating, Double highestRating, LocalDate browserDate){
+    public List getRatingsBetweenRange(Double initialRating, Double highestRating, String month, String year){
 
+        String[] monthArray = {"01","02","03","04","05","06","07","08","09","10","11","12"};
+        int index = Integer.parseInt(month);
+        String date = monthArray[index]+"/"+year;
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/yyyy");
+        YearMonth yearMonth = YearMonth.parse(date, dateFormat);
+        LocalDate browserDate = yearMonth.atDay(1);
+        System.out.println(browserDate);
 
         return performanceAppraisalRepository.findByRatingBetween(initialRating,
                                                                   highestRating,

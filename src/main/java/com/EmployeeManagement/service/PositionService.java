@@ -15,7 +15,7 @@ public class PositionService {
         try{
             return positionRepository.findById(positionId).get();
         }catch (Exception e){
-            return new Position();
+            return null;
         }
     }
 
