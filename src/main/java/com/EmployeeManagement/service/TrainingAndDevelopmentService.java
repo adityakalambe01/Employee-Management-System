@@ -18,10 +18,18 @@ public class TrainingAndDevelopmentService {
     public Boolean updateTrainingAndDevelopment(Integer trainingId, TrainingAndDevelopment trainingAndDevelopment){
         try {
             TrainingAndDevelopment tdObj = trainingAndDevelopmentRepository.findById(trainingId).get();
-            tdObj.setTrainingName(trainingAndDevelopment.getTrainingName());
-            tdObj.setEmployeeId(trainingAndDevelopment.getEmployeeId());
-            tdObj.setTrainingDuration(trainingAndDevelopment.getTrainingDuration());
-            tdObj.setTrainingDate(trainingAndDevelopment.getTrainingDate());
+            tdObj.setTrainingName(
+                    trainingAndDevelopment.getTrainingName()
+            );
+            tdObj.setEmployeeId(
+                    trainingAndDevelopment.getEmployeeId()
+            );
+            tdObj.setTrainingDuration(
+                    trainingAndDevelopment.getTrainingDuration()
+            );
+            tdObj.setTrainingDate(
+                    trainingAndDevelopment.getTrainingDate()
+            );
             trainingAndDevelopmentRepository.save(tdObj);
         }catch (Exception e){
             return false;
@@ -32,7 +40,9 @@ public class TrainingAndDevelopmentService {
     public Boolean deleteTrainingAndDevelopment(Integer trainingId){
         try {
             trainingAndDevelopmentRepository.deleteById(
-                    trainingAndDevelopmentRepository.findById(trainingId).get().getTrainingId()
+                    trainingAndDevelopmentRepository.findById(trainingId)
+                            .get()
+                            .getTrainingId()
             );
         }catch (Exception e){
             return false;
